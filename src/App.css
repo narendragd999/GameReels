@@ -1,0 +1,204 @@
+/* Import Poppins font for consistency */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  max-width: calc(100vh * 9 / 16);
+  margin: 0 auto;
+  background: linear-gradient(180deg, #FF6B6B, #8B5CF6);
+  background-size: cover;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  box-sizing: border-box;
+  overflow: hidden;
+  touch-action: pan-y;
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFFF;
+}
+
+.app-header {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(139, 92, 246, 0.8);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.heart-btn, .upload-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #FFFFFF;
+  padding: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.heart-btn:hover, .upload-btn:hover {
+  color: #A3E635;
+}
+
+.app-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.game-wrapper {
+  position: relative;
+  width: 90%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #FFFFFF;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.nav-arrow:hover {
+  transform: translateY(-50%) scale(1.2);
+}
+
+.left-arrow {
+  left: -30px;
+}
+
+.right-arrow {
+  right: -30px;
+}
+
+.game-area {
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.game-area.slide-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.game-area.slide-right {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.game-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.hud {
+  width: 90%;
+  padding: 10px;
+  background: rgba(139, 92, 246, 0.8);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.score-text {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.play-again-btn {
+  padding: 8px 16px;
+  background-color: #A3E635;
+  color: #1E293B;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.play-again-btn:hover {
+  transform: scale(1.05);
+}
+
+.challenge-btn {
+  padding: 8px 16px;
+  background-color: #F59E0B;
+  color: #1E293B;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.challenge-btn:hover {
+  transform: scale(1.05);
+}
+
+.no-games {
+  font-size: 1.2rem;
+  color: #E5E7EB;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Media Query for smaller devices */
+@media (max-height: 600px) {
+  .game-wrapper {
+    height: 50vh;
+  }
+
+  .app-header, .hud {
+    padding: 5px;
+  }
+
+  .app-title, .score-text {
+    font-size: 1rem;
+  }
+
+  .play-again-btn, .challenge-btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .nav-arrow {
+    font-size: 1.5rem;
+  }
+
+  .left-arrow {
+    left: -20px;
+  }
+
+  .right-arrow {
+    right: -20px;
+  }
+}

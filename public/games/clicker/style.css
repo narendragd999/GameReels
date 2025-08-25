@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+#clicker-container {
+  text-align: center;
+}
+
+#click-btn {
+  padding: 20px 40px;
+  font-size: 24px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#click-btn:hover {
+  background-color: #218838;
+} 
